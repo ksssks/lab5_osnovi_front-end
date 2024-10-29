@@ -1,0 +1,23 @@
+
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.col-md-4 {
+    flex: 1;
+    padding: 0 10px;
+}
+.interactive_table {
+    width: 500px;
+    height: 500px;
+    font-weight: 800;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.interactive_table td {
+    vertical-align: middle;
+    transition: background-color 0.3s ease;
+}
+

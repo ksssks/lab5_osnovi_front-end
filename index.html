@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab5</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container mt-5 text-center">
+
+    <div class="container mt-12 text-center">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-secondary active" onclick="showMenu(1)">Інформація</button>
+            <button type="button" class="btn btn-secondary" onclick="showMenu(2)">Перевірка даних на валідність</button>
+            <button type="button" class="btn btn-secondary" onclick="showMenu(3)">Зафарбування</button>
+        </div>
+    </div>
+
+
+    <div class="container mt-12 text-center">
+        <div id="part1" class="algorithm-section">
+            <div class="container mt-3">
+                <h1>Лабораторна робота №5</h1>
+                <h3>Виконав студент 3 курсу групи ІО-24</h3>
+                <h3>Шульга Кирил</h3>
+                <h3>Варіант №2(номер у списку 32)</h3>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <td>№ вар</td>
+                        <td colspan="6"><h5>Номера рядків в табл. 2</h5></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div id="part2" class="algorithm-section">
+            <div class="container">
+                <div class="text-center">
+                    <hr class="mb-4">
+                    <img class="d-block mx-auto mb-4" src="check2-square.svg" alt="svg_check" width="72" height="72">
+                    <h2>Перевірка даних на валідність</h2>
+                    <p class="lead">Будь ласка заповніть форму</p>
+                    <hr class="mb-4">
+                </div>
+
+                <div class="container">
+                    <h4 class="mb-3">Форма</h4>
+                    <form class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <label for="lastName">Прізвище</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="ТТТТТТ" value=""
+                                       required>
+                                <div class="invalid-feedback">
+                                    Введіть Ваше прізвище.
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <label for="firstName">Ім'я(скорочено)</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Т." value=""
+                                       required>
+                                <div class="invalid-feedback">
+                                    Введіть Ваше ім'я.
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <label for="fatherName">По батькові(скорочено)</label>
+                                <input type="text" class="form-control" id="fatherName" placeholder="Т." value=""
+                                       required>
+                                <div class="invalid-feedback">
+                                    Введіть Ваше ім'я по батькові.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="group">Група</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="group" placeholder="ТТ-ЧЧ" required>
+                                <div class="invalid-feedback" style="width: 100%;">
+                                    Введіть групу (наприклад ІО-24).
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="telephone">Номер телефону</label>
+                            <input type="text" class="form-control" id="telephone" placeholder="(ЧЧЧ)-ЧЧЧ-ЧЧ-ЧЧ"
+                                   required>
+                            <div class="invalid-feedback">
+                                Введіть Ваш номер телефону.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="id_card">ID-card</label>
+                            <input type="text" class="form-control" id="id_card" placeholder="ТТ №ЧЧЧЧЧЧ" required>
+                            <div class="invalid-feedback">
+                                Введіть Ваш номер ID-картки.
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="faculty">Факультет</label>
+                            <input type="text" class="form-control" id="faculty" placeholder="ТТТТ" required>
+                            <div class="invalid-feedback">
+                                Введіть Ваш факультет.
+                            </div>
+                        </div>
+
+                        <hr class="mb-4">
+                        <button class="btn btn-dark btn-lg btn-block" type="submit">Відправити форму</button>
+                    </form>
+                </div>
+
+
+                <footer class="my-5 pt-5 text-muted text-center text-small">
+                    <div class="modal fade" id="dataModal" tabindex="-1" role="dialog" aria-labelledby="dataModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="dataModalLabel">Підтвердження даних</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p><strong>ПІБ:</strong> <span id="modalFullName"></span></p>
+                                    <p><strong>Група:</strong> <span id="modalGroup"></span></p>
+                                    <p><strong>Номер телефону:</strong> <span id="modalTelephone"></span></p>
+                                    <p><strong>ID-card:</strong> <span id="modalIdCard"></span></p>
+                                    <p><strong>Факультет:</strong> <span id="modalFaculty"></span></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити
+                                    </button>
+                                    <button type="button" class="btn btn-primary">Підтвердити</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <div id="part3" class="algorithm-section text-center">
+            <h2>Таблиця розміром (6х6)</h2>
+            <table class="table table-bordered interactive_table">
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td>32</td>
+                    <td>33</td>
+                    <td>34</td>
+                    <td>35</td>
+                    <td>36</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>Оберіть колір</p>
+            <div id="colorPickerContainer">
+                <input type="color" id="colorPicker">
+                <button class="btn-dark" id="resetButton">Скинути колір</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script src="index.js"></script>
+</html>
+
+
+
